@@ -1,0 +1,5 @@
+<div class="w-100">
+    <div *ngFor="let inputOption of formConfigTemplate"  class="mt-2 ms-2 b-1 form-control" [draggable]="true" (dragstart)="onDrag($event,inputOption.type)">
+        {{inputOption.type}}
+    </div>
+</div>
