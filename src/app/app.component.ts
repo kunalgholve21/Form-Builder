@@ -27,13 +27,10 @@ export class AppComponent {
 
   onDrop(event: DragEvent): void {
     event.preventDefault();
-    console.log("here");
     const data = event?.dataTransfer?.getData('text'); // Safely access dataTransfer
-    console.log(event);
       if (data) {
     // Handle the dropped data or perform actions as needed
         this.form.push(data);
-        console.log("data",this.form)
       }
   }
 
@@ -43,7 +40,6 @@ export class AppComponent {
   }
 
   onSubmit(): void {
-    console.log('Form Data:', this.form,this.formData);
     // Process or store the formData as needed
    this.submittedForm = this.form;
     this.submittedData = {...this.formData}
@@ -52,13 +48,10 @@ export class AppComponent {
 
   onFieldChange(ind: number, value: any): void {
     this.formData[ind] = value;
-    // this.formData = {}
   }
 
   onGetForm() {
     this.formData = this.submittedData;
-    console.log("sub",this.form,this.formData)
-    // this.form = [ ...Object.keys(this.submittedData) ]; // Populate form data from submittedData
   }
   
   onResetForm(){
